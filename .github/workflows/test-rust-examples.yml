@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "examples/developer-hub-rust/**"
+      - ".github/workflows/test-rust-examples.yml"
 
 permissions:
   contents: read
@@ -16,7 +19,7 @@ jobs:
       run:
         working-directory: ./examples/developer-hub-rust
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -28,6 +31,6 @@ jobs:
       - name: Lint with clippy
         run: cargo clippy --bins -- -D warnings
       - name: Build
-        run: cargo build --bins
+        run: cargo build --bins --locked
       - name: Run tests
         run: ./test.sh

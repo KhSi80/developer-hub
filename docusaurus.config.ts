@@ -6,7 +6,7 @@ import rehypeKatex from "rehype-katex";
 
 const config: Config = {
   title: "Flare Developer Hub",
-  tagline: "The decentralized origin for Flare builders.",
+  tagline: "Official documentation for Flare.",
   favicon: "/img/favicon.ico",
 
   // Set the production url of your site here
@@ -83,6 +83,16 @@ const config: Config = {
         attributes: {
           name: "google-site-verification",
           content: "S7ko-mhGTnZdYIIAcKUa-IsjtF8x-0wvleX2uDUg0NU",
+        },
+      },
+      {
+        tagName: "link",
+        attributes: {
+          rel: "preload",
+          href: "/fonts/Satoshi/Satoshi-Variable.woff2",
+          as: "font",
+          type: "font/woff2",
+          crossorigin: "anonymous",
         },
       },
     ],
@@ -191,7 +201,7 @@ const config: Config = {
           items: [
             {
               label: "Flare Portal",
-              href: "http://portal.flare.network/",
+              href: "https://portal.flare.network/",
             },
             {
               label: "Governance Proposals",

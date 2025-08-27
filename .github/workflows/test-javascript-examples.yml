@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "examples/developer-hub-javascript/**"
+      - ".github/workflows/test-javascript-examples.yml"
 
 permissions:
   contents: read
@@ -16,7 +19,7 @@ jobs:
       run:
         working-directory: ./examples/developer-hub-javascript
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: 20

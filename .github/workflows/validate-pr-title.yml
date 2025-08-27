@@ -1,11 +1,9 @@
 name: Validate PR Title
 
 on:
+  # DO NOT CHECKOUT PR CODE
   pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
+    types: [opened, edited, synchronize]
 
 permissions:
   pull-requests: read
@@ -17,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validate PR Title with Conventional Commits
-        uses: amannn/action-semantic-pull-request@v5
+        uses: amannn/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

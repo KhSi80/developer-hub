@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "docs/**"
+      - ".github/workflows/check-external-links.yml"
 
 jobs:
   check-external-links:
@@ -11,7 +14,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Restore lychee cache
         uses: actions/cache@v4
         with:
